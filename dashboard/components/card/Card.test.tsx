@@ -21,7 +21,7 @@ describe('Card', () => {
         icon={<RefreshIcon width={24} height={24} />}
       />
     );
-    const icon = screen.getByTestId('icon');
+    const icon = screen.findByTestId('icon');
     expect(icon).toBeInTheDocument();
   });
 
@@ -33,7 +33,7 @@ describe('Card', () => {
         icon={<RefreshIcon width={24} height={24} />}
       />
     );
-    const formattedNumber = screen.getByTestId('formattedNumber');
+    const formattedNumber = screen.findByTestId('formattedNumber');
     expect(formattedNumber).toHaveTextContent('5K');
   });
 
@@ -46,7 +46,7 @@ describe('Card', () => {
         formatter="currency"
       />
     );
-    const formattedNumber = screen.getByTestId('formattedNumber');
+    const formattedNumber = screen.findByTestId('formattedNumber');
     expect(formattedNumber).toHaveTextContent('$6K');
   });
 

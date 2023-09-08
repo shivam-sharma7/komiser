@@ -24,19 +24,19 @@ describe('Dashboard Top Stats', () => {
 
   it('should render the skeleton component when loading is true', () => {
     customRender(<DashboardTopStats />, { loading: true });
-    const skeleton = screen.getByTestId('loading');
+    const skeleton = screen.findByTestId('loading');
     expect(skeleton).toBeInTheDocument();
   });
 
   it('should render the error component when error is true', () => {
     customRender(<DashboardTopStats />, { error: true });
-    const error = screen.getByTestId('error');
+    const error = screen.findByTestId('error');
     expect(error).toBeInTheDocument();
   });
 
   it('should render the top stats cards component when there is data', () => {
     customRender(<DashboardTopStats />, { data: mockDataForDashboard.stats });
-    const component = screen.getByTestId('data');
+    const component = screen.findByTestId('data');
     expect(component).toBeInTheDocument();
   });
 });

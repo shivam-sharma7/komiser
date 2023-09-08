@@ -15,19 +15,19 @@ describe('Dashboard Cloud Map', () => {
 
   it('should render the skeleton component when loading is true', () => {
     render(<DashboardCloudMap {...props} loading={true} />);
-    const loading = screen.getByTestId('loading');
+    const loading = screen.findByTestId('loading');
     expect(loading).toBeInTheDocument();
   });
 
   it('should render the error component when error is true', () => {
     render(<DashboardCloudMap {...props} error={true} />);
-    const error = screen.getByTestId('error');
+    const error = screen.findByTestId('error');
     expect(error).toBeInTheDocument();
   });
 
   it('should render the cloud map card component if error and loading are false', () => {
     render(<DashboardCloudMap {...props} />);
-    const cloudMap = screen.getByTestId('cloudMap');
+    const cloudMap = screen.findByTestId('cloudMap');
     expect(cloudMap).toBeInTheDocument();
   });
 });
